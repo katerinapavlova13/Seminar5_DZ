@@ -3,9 +3,6 @@
 
 //[3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-Console.Write("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
 double[] RandArray(int size, int min, int max)
 {
     double[] array = new double[size];
@@ -16,7 +13,7 @@ double[] RandArray(int size, int min, int max)
     }
     return array;
 }
- 
+
 double[] DiffNumber(double[] array)
 {
 
@@ -37,13 +34,12 @@ void PrintArray(double[] array)
     Console.Write($"[");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{array[i]},");
+        Console.Write($" {Math.Round(array[i], 2, MidpointRounding.AwayFromZero)};");
     }
     Console.Write($"{array[array.Length - 1]}]");
 }
-double[] arr = RandArray(20, 1, 20);
+double[] arr = RandArray(10, 1, 20);
 PrintArray(arr);
 double[] diffNumber = DiffNumber(arr);
-
-Console.Write($"-> {diffNumber[0]}");
+Console.Write($" -> {Math.Round(diffNumber[0], 2, MidpointRounding.AwayFromZero)}");
 
