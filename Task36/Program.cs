@@ -6,21 +6,16 @@
 
 
 Console.Write("Введите размер массива: ");
-int lenght = Convert.ToInt32(Console.ReadLine());
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[size];
 
-int[] RandArray(int len)
+void FillArrayRandomNumbers(int[] array)
 {
-    int[] arrays = new int[len];
-    Random rnd = new Random();
-
-    for (int i = 0; i < arrays.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        arrays[i] = rnd.Next(1, 10);
+        array[i] = new Random().Next(1, 10);
     }
-    return arrays;
 }
-
-int[] res = RandArray(lenght);
 
 void PrintArray(int[] res1)
 {
@@ -31,13 +26,14 @@ void PrintArray(int[] res1)
     }
     Console.Write($"{res1[res1.Length - 1]}]");
 }
-PrintArray(res);
 
-int[] arr = RandArray(lenght);
-int oddNumberCount = 0;
+FillArrayRandomNumbers(array);
+PrintArray(array);
 
-for (int i = 1; i < arr.Length; i++)
+int sum = 0;
+for (int i = 0; i < array.Length; i++)
 {
-    if (arr[i] % 2 == 0) oddNumberCount += arr[i];
+    if (i % 2 == 0) sum = sum + array[i];
 }
-Console.WriteLine($"-> {oddNumberCount}");
+Console.WriteLine();
+Console.WriteLine($"Cумма элементов на нечётных позициях -> {sum}");
