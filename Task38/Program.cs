@@ -3,7 +3,7 @@
 
 //[3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-Console.WriteLine("Введите размер массива: ");
+Console.Write("Введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
 double[] RandArray(int size, int min, int max)
@@ -44,6 +44,6 @@ void PrintArray(double[] array)
 double[] arr = RandArray(20, 1, 20);
 PrintArray(arr);
 double[] diffNumber = DiffNumber(arr);
-Console.WriteLine();
-Console.Write($"Рзница между максимальным и минимальным элементом -> {diffNumber[0]}");
+
+Console.Write($"-> {diffNumber[0]}");
 

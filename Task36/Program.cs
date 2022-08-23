@@ -13,7 +13,7 @@ void FillArrayRandomNumbers(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1, 10);
+        array[i] = new Random().Next(1, 100);
     }
 }
 
@@ -35,5 +35,4 @@ for (int i = 0; i < array.Length; i++)
 {
     if (i % 2 == 0) sum = sum + array[i];
 }
-Console.WriteLine();
-Console.WriteLine($"Cумма элементов на нечётных позициях -> {sum}");
+Console.WriteLine($"-> {sum}");
